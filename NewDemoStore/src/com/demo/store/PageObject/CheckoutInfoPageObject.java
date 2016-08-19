@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 public class CheckoutInfoPageObject {
 	WebDriver driver;
 	
+
 	public CheckoutInfoPageObject(WebDriver driver)
 	{
 		this.driver=driver;

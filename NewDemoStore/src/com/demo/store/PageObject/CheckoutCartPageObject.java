@@ -43,8 +43,8 @@ public class CheckoutCartPageObject {
 		total=total.substring(1);
 		price=price.substring(1);
 		 try{
-		  int total_int=Integer.parseInt(total);
-		  int price_int=Integer.parseInt(price);
+		  float total_int=Float.parseFloat(total);
+		  float price_int=Float.parseFloat(price);
 		  Assert.assertEquals(total_int, (price_int*quantity));
 		  }catch(NumberFormatException e1)
 		   {
@@ -53,13 +53,21 @@ public class CheckoutCartPageObject {
 	 }
 	
 //To remove product from cart	
-	public void removeProduct()
+	public void removeProduct(int tr)
 	{
 		driver.findElement(By.xpath("//*[@id='checkout_page_container']/div[1]/table/tbody/tr["+(tr+1)+"]/td[6]/form/input[4]")).click();
 	}
 	
+	public void removeItemFromCart(String itemName){
+		
+	}
+
 	
-/*	
+	
+	
+	
+	
+/*	-------------------------------------------------------------------------
 	public void updateOrder(int tr, int quantity)
 	{
 		WebElement e1=driver.findElement(By.className("checkout_cart"));

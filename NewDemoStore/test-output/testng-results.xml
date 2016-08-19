@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="48324" started-at="2016-08-15T20:00:17Z" finished-at="2016-08-15T20:01:06Z">
+  <suite name="Suite" duration-ms="141766" started-at="2016-08-19T06:45:12Z" finished-at="2016-08-19T06:47:33Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="48324" started-at="2016-08-15T20:00:17Z" finished-at="2016-08-15T20:01:06Z">
+    <test name="Test" duration-ms="141766" started-at="2016-08-19T06:45:12Z" finished-at="2016-08-19T06:47:33Z">
       <class name="com.demo.store.tests.TestNGDemoStore">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.demo.store.tests.TestNGDemoStore@7c16905e]" name="setup" is-config="true" duration-ms="15440" started-at="2016-08-16T01:30:17Z" finished-at="2016-08-16T01:30:33Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.demo.store.tests.TestNGDemoStore@482f8f11]" name="setup" is-config="true" duration-ms="24375" started-at="2016-08-19T12:15:12Z" finished-at="2016-08-19T12:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="goToCategories()[pri:0, instance:com.demo.store.tests.TestNGDemoStore@7c16905e]" name="goToCategories" duration-ms="32829" started-at="2016-08-16T01:30:33Z" finished-at="2016-08-16T01:31:06Z">
+        <test-method status="PASS" signature="goToCategories()[pri:0, instance:com.demo.store.tests.TestNGDemoStore@482f8f11]" name="goToCategories" duration-ms="117260" started-at="2016-08-19T12:15:36Z" finished-at="2016-08-19T12:17:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goToCategories -->
