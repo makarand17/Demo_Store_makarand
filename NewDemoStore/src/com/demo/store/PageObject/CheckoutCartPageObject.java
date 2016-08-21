@@ -16,11 +16,7 @@ public class CheckoutCartPageObject {
 		this.driver=driver;
 	}
 	 
-	public CheckoutInfoPageObject goToCheckout()
-	{
-		driver.findElement(By.className("step2")).click();
-		return (new CheckoutInfoPageObject(driver));
-	}
+
 	//To update quantity of the product 
 	public void updateOrder(int tr, int quantity)
 	{
@@ -56,6 +52,12 @@ public class CheckoutCartPageObject {
 	public void removeProduct(int tr)
 	{
 		driver.findElement(By.xpath("//*[@id='checkout_page_container']/div[1]/table/tbody/tr["+(tr+1)+"]/td[6]/form/input[4]")).click();
+	}
+	
+	public CheckoutInfoPageObject goToCheckout()
+	{
+		driver.findElement(By.className("step2")).click();
+		return (new CheckoutInfoPageObject(driver));
 	}
 	
 	public void removeItemFromCart(String itemName){

@@ -25,9 +25,9 @@ public class TestNGDemoStore {
 	@BeforeTest
 	public void setup()
 	{
-		//System.setProperty("webdriver.chrome.driver","F://work//chromedriver//chromedriver.exe");
-		//driver=new ChromeDriver();
-		driver=new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver","F://work//chromedriver//chromedriver.exe");
+		driver=new ChromeDriver();
+		//driver=new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get("http://store.demoqa.com");
 		home=new DemoStoreHomePageObject(driver);
@@ -36,17 +36,20 @@ public class TestNGDemoStore {
 	@Test
 	public void goToCategories() throws InterruptedException, NumberFormatException
 	{	
-		prodcatobj = home.productCategory();
-		prodcatobj.addToCart(2);
+		prodcatobj = home.productCategory("Accessories");
+		prodcatobj.addToCart("Apple TV");
 		
-		home.clcikOnCategory("iMacs");
-		prodcatobj.addToCart(0);
+		home.productCategory("iMacs");
+		prodcatobj.addToCart("Magic Mouse");
 		
-		home.clcikOnCategory("iPads");
-		prodcatobj.addToCart(1);
+
+		home.productCategory("iPads");
+		prodcatobj.addToCart("Apple iPad 6");
 		
-		home.clcikOnCategory("iPhones");
-		checkoutCartObj=prodcatobj.addToCartWithCheckout(1);
+		home.productCategory("iPhones");
+		prodcatobj.addToCart("Apple iPhone 4S");
+		
+		checkoutCartObj=prodcatobj.goToCart();
 		
 		//Pass the index number of the product from cart to remove the product
 		checkoutCartObj.removeProduct(2);

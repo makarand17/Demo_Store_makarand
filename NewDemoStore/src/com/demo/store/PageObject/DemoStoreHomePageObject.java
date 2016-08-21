@@ -21,51 +21,51 @@ public class DemoStoreHomePageObject {
 	}
 //------------------------------------------------------------------
 	
-	public ProductCategoryPageObject productCategory() throws InterruptedException
-	{	
-		clcikOnCategory("Accessories");
-		return (new ProductCategoryPageObject(driver));
-	}
-//--------------------------------------------------------------
-	public void clcikOnCategory(String categoryName) throws InterruptedException
+	public ProductCategoryPageObject productCategory(String categoryName) throws InterruptedException
 	{
+		
 		ac = new Actions(driver);
 		WebElement prodCat = driver.findElement(By.xpath("//*[@id='menu-item-33']/a"));
-		ac.moveToElement(prodCat).perform();
 		
 		switch (categoryName) {
 		case "Accessories":
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-34")).click();
-			break;
+			return (new ProductCategoryPageObject(driver));
+			//break;
 		case "iMacs":
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-35")).click();
-			break;
+			return (new ProductCategoryPageObject(driver));
+
 		case "iPads":
 			Thread.sleep(3000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-36")).click();
-			break;
+			return (new ProductCategoryPageObject(driver));
+
 		case "iPhones":
 			Thread.sleep(4000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-37")).click();
-			break;
+			return (new ProductCategoryPageObject(driver));
+
 		case "iPods":
 			Thread.sleep(3000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-38")).click();
-			break;
+			return (new ProductCategoryPageObject(driver));
+
 		case "MacBooks":
 			Thread.sleep(3000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-39")).click();
-			break;
-		}
-		
+			return (new ProductCategoryPageObject(driver));
+
+	}	
+		return null;
 	}
 
 }
