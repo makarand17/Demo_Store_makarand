@@ -31,17 +31,18 @@ public class DemoStoreHomePageObject {
 		case "Accessories":
 			Thread.sleep(5000);
 			ac.moveToElement(prodCat).perform();
+			Thread.sleep(1000);
 			driver.findElement(By.id("menu-item-34")).click();
 			return (new ProductCategoryPageObject(driver));
 			//break;
 		case "iMacs":
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-35")).click();
 			return (new ProductCategoryPageObject(driver));
 
 		case "iPads":
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			ac.moveToElement(prodCat).perform();
 			driver.findElement(By.id("menu-item-36")).click();
 			return (new ProductCategoryPageObject(driver));

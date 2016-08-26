@@ -1,11 +1,13 @@
 package com.demo.store.PageObject;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class ProductCategoryPageObject extends DemoStoreHomePageObject {
 	
@@ -30,14 +32,20 @@ public class ProductCategoryPageObject extends DemoStoreHomePageObject {
 			//boolean flag= productColumn.findElement(By.partialLinkText(partialProductName)).isDisplayed();
 			String ttl=productColumn.findElement(By.className("prodtitle")).getText();
 			
-			if(ttl.equals(partialProductName))
+			if(ttl.contains(partialProductName))
 			{
+				Thread.sleep(3000);
+				WebElement addToCartButton= productColumn.findElement(By.className("wpsc_buy_button"));
+				
+				Actions ac=new Actions(driver);
+				ac.moveToElement(addToCartButton).perform();
 				Thread.sleep(3000);
 				productColumn.findElement(By.className("wpsc_buy_button")).click();
 			}
 		}
 		
-		Thread.sleep(4500);
+		Thread.sleep(10000);
+		
 		driver.findElement(By.className("continue_shopping")).click();
 
 //		List<WebElement> allbuttons=driver.findElements(By.className("wpsc_buy_button"));

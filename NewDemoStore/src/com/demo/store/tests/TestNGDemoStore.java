@@ -25,7 +25,8 @@ public class TestNGDemoStore {
 	@BeforeTest
 	public void setup()
 	{
-		System.setProperty("webdriver.chrome.driver","F://work//chromedriver//chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","F://work//chromedriver//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C://drivers//chromedriver.exe");
 		driver=new ChromeDriver();
 		//driver=new FirefoxDriver();
 		driver.manage().window().maximize();
@@ -39,33 +40,34 @@ public class TestNGDemoStore {
 		prodcatobj = home.productCategory("Accessories");
 		prodcatobj.addToCart("Apple TV");
 		
-		home.productCategory("iMacs");
-		prodcatobj.addToCart("Magic Mouse");
+		//home.productCategory("iPhones");
+		//prodcatobj.addToCart("Apple iPhone 4S 16GB");		
 		
-
+		//home.productCategory("iMacs");
+		//prodcatobj.addToCart("Magic Mouse");
+		
 		home.productCategory("iPads");
 		prodcatobj.addToCart("Apple iPad 6");
 		
-		home.productCategory("iPhones");
-		prodcatobj.addToCart("Apple iPhone 4S");
+
 		
 		checkoutCartObj=prodcatobj.goToCart();
 		
 		//Pass the index number of the product from cart to remove the product
-		checkoutCartObj.removeProduct(2);
-		checkoutCartObj.removeItemFromCart("Magic Mouse");
+		//checkoutCartObj.removeProduct(2);
+		//checkoutCartObj.removeItemFromCart("Magic Mouse");
 		
 		//Pass the index number of the product from cart and quantity to update
-		checkoutCartObj.updateOrder(2, 3);
+		checkoutCartObj.updateOrder("Apple TV", 3);
 		
 		//This verifies the above update and total
-		checkoutCartObj.verifyUpdate();
+	//	checkoutCartObj.verifyUpdate(1);
 		
 		checkoutInfoObj=checkoutCartObj.goToCheckout();
-		checkoutInfoObj.calculateShipping("IN", "Maharashtra");
-		
-		checkoutInfoObj.enterEmail("abc@test.com");
-		checkoutInfoObj.billingDetails("ajay", "D", "Juhu", "mumbai", "maharashtra", "410000", "1234567890");
+	//	checkoutInfoObj.calculateShipping("IN", "Maharashtra");
+	//	
+	//	checkoutInfoObj.enterEmail("abc@test.com");
+	//	checkoutInfoObj.billingDetails("ajay", "D", "Juhu", "mumbai", "maharashtra", "410000", "1234567890");
 		
 		
 	}
